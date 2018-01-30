@@ -1,0 +1,97 @@
+<!--
+   Created by  on 2017/8/3.
+-->
+
+<!-- header -->
+<div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal"
+		aria-label="Close" ng-click="close()">
+		<span aria-hidden="true">×</span>
+	</button>
+	<h4 class="modal-title">{{'CONFIG.MENU_OUTLET.MODIFY_PROPERTY'|translate}}</h4>
+</div>
+
+<!-- body -->
+<div class="modal-body">
+	<div class="row">
+
+		<div class="col-lg-12 col-md-12 col-xs-12 col-xs-12 column">
+
+			<div class="input-group">
+				<span class="input-group-addon">
+					<!-- {{'CONFIG.MENU_OUTLET.AREA_NAME'|translate}} -->区域
+				</span>
+				<select class="form-control" id="areaId" ng-model="SelectArea"
+						ng-change="changeOpt(x);"
+					ng-options="x.AreaName_level1 as x.AreaName_level1 for x in areaList_1.data">
+				</select>
+				<!--<select class="form-control" id="areaId" ng-model="SelectArea">
+					 <option value="">{{'COMMON.SEARCH'|translate}}</option>
+					 <option ng-repeat="x in areaList_1.data" value="{{x.AreaId}}">{{x.AreaName_level1}}</option>
+				</select>-->
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<h1></h1>
+		</div>
+	</div>
+
+	<div class="row">
+
+		<div class="col-lg-12 col-md-12 col-xs-12 col-xs-12 column">
+
+			<div class="input-group">
+				<span class="input-group-addon">
+					<!-- {{'CONFIG.MENU_OUTLET.PLACE_NAME'|translate}} -->商圈
+				</span>
+				<select class="form-control" id="placeId" ng-model="SelectPlace"
+					ng-options="x.PlaceId as x.PlaceId for x in placeList_1.data">
+					<!-- <option value="">{{'COMMON.SEARCH'|translate}}</option> -->
+					<!-- <option ng-repeat="x in placeList_1.data" value="{{x.PlaceId}}">{{x.PlaceId}}</option> -->
+				</select>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<h1></h1>
+		</div>
+	</div>
+
+	<div class="row">
+
+		<div class="col-lg-12 col-md-12 col-xs-12 col-xs-12 column">
+
+			<div class="input-group">
+				<span class="input-group-addon">
+					<!-- {{'CONFIG.MENU_OUTLET.BRAND_NAME'|translate}} -->品牌
+				</span> <select class="form-control" id="brandId" ng-model="SelectBrand"
+					ng-options="x.BrandId as x.BrandId for x in brandList_1.data">
+					<!--  <option value="">{{'COMMON.SEARCH'|translate}}</option>  
+                    <option ng-repeat="x in brandList_1.data" value="{{x.BrandId}}">{{x.BrandId}}</option> -->
+				</select>
+			</div>
+
+		</div>
+
+	</div>
+
+
+</div>
+
+<!-- footer -->
+<div class="modal-footer">
+	<button type="button" class="btn btn-primary" id="btn_save"
+		ng-click="save()">
+		<!-- 保存 -->
+		{{'COMMON.SAVE'|translate}}
+	</button>
+</div>

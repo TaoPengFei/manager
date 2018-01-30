@@ -1,0 +1,161 @@
+{
+  "COMMON": {
+    "OK": "OK",
+    "CANCEL": "Cancel",
+    "SAVE": "Save",
+    "LOADING": "Loading..." ,
+    "REFRESH": "Refresh",
+    "EDIT": "Edit",
+    "CONFIRM_DELETE": "Confirm to Delete!!!",
+    "TIP": "Tip",
+    "SUCCESS": "Success!",
+    "FAIL": "Fail!",
+    "PLACEHOLDER": "--- Please Input ---",
+    "ADD": "Add",
+    "EDIT": "Edit"
+  },
+  "HEADER": {
+    "SIGN_OUT": "SignOut",
+    "CHANGE_PASSWORD": "Change Password",
+    "CURRENT_PASSWORD": "Current Password",
+    "NEW_PASSWORD": "New Password",
+    "CONFIRM_PASSWORD": "Confirm Password"
+  },
+  "SIDEBAR": {
+    "MY_DASHBOARD": "My Dashboard",
+    "MY_REPORTER": "My Reporter",
+    "CONFIG": {
+      "MENU": "Permission",
+      "MENU_USER": "User",
+      "MENU_ROLE": "Role",
+      "MENU_ROLE_MENU": "Role Menu",
+      "MENU_ROLE_MENU_TREE": "Role Menu Tree",
+      "MENU_BRAND": "Brand",
+      "MENU_AREA": "Area",
+      "MENU_OUTLET": "Outlet",
+      "MENU_COMMUNICATION": "Communication Report",
+      "MENU_ITEMCATEGORY": "Item Category",
+      "MENU_ITEMDEPTMENT": "Item Deptment",
+      "MENU_PLACE": "Place",
+      "MENU_GUESTGRADETYPE": "Guest Grade Type",
+      "MENU_GUESTNOTYPE": "Guest Number Type",
+      "MENU_PROMOTION": "Promotion",
+      "MENU_PROMOTION_ITEM": "Promotion Item",
+      "MENU_DATE": "Date "
+    }
+  },
+  "CONFIG":{
+    "MENU_USER":{
+      "USER_NAME": "User",
+      "USER_SEARCH": "--- Please enter ---",
+      "ADD_USER": "Add",
+      "PRINT": "Print",
+      "MODIFY": "Modify",
+      "ENABLE_OK": "Yes",
+      "ENABLE_NO": "No",
+      "USER_ROLE": "User Role",
+      "NEW_PWD": "New Password",
+      "CONFIRM_PWD": "Confirm Password",
+      "DESC": "Describe",
+      "SAVE": "Save",
+      "NEW_PLACEHOLDER": "Please Enter Your Password",
+      "CONFIRM_PLACEHOLDER": "Please Enter Your Password Again",
+      "CONFIRM_USER_MSG": "* The Two Password Input Is Inconsistent!"
+    },
+    "MENU_ROLE":{
+      "ROLE_NAME": "Role",
+      "ROLE_SEARCH": "--- Please enter ---",
+      "ADD_ROLE": "Add",
+      "PRINT": "Print",
+      "MODIFY": "Modify",
+      "DELETE": "Delete",
+      "ROLE_PLACEHOLDER": "Please make sure that the name of the input role already exists!",
+      "IF_ROLE": "Hint: the role already exists!",
+      "DESC": "Describe",
+      "SAVE": "Save"
+    },
+    "MENU_ROLE_MENU":{
+      "USER_ROLE_NAME": "User Roles",
+      "USER_ROLE_SEARCH": "--- Please enter ---",
+      "ROLE_WITHOUT_MENU": "Role Not Added Menu",
+      "ROLE_WITH_MENU": "Role Existing Menu",
+      "ADD_USER_ROLE": "Add",
+      "DELETE": "Delete"
+    },
+    "MENU_BRAND":{
+      "BRAND_NAME": "Brand Tree",
+      "BRAND_ADD": "Add Sub Brand",
+      "BRAND_PARENT": "Current Main Brand",
+      "BRAND_CODE": "Sub Brand Code",
+      "BRAND_SUB_NAME": "Sub Brand Name",
+      "BRAND_DESC": "Sub Brand Describe",
+      "BRAND_EDIT": "Edit Brand",
+      "EDIT_CODE": "Edit Brand Code",
+      "EDIT_NAME": "Edit Brand Name",
+      "EDIT_DESC": "Edit Brand Describe"
+    },
+    "MENU_AREA":{
+      "AREA_NAME": "Area Tree",
+      "AREA_ADD": "Add Sub Area",
+      "AREA_PARENT": "Current Main Area",
+      "AREA_CODE": "Sub Area Code",
+      "AREA_SUB_NAME": "Sub Area Name",
+      "AREA_DESC": "Sub Area Describe",
+      "AREA_EDIT": "Edit Area",
+      "EDIT_CODE": "Edit Area Code",
+      "EDIT_NAME": "Edit Area Name",
+      "EDIT_DESC": "Edit Area Describe"
+    },
+    "MENU_OUTLET":{
+      "OUTLET_NAME": "Outlet Name",
+      "MODIFY_PROPERTY": "Modify Property",
+      "AREA_NAME": "Area Name",
+      "PLACE_NAME": "Place Name",
+      "BRAND_NAME": "Brand Name"
+
+    },
+    "MENU_ITEMCATEGORY": {
+      "ITEMCATEGORY_SEARCH": "Search",
+      "ITEMCATEGORY_ADD": "Add",
+      "ITEMCATEGORY_EDIT": "Edit",
+      "ITEMCATEGORY_DEL": "Delete"
+    },
+    "MENU_ITEMDEPTMENT": {
+      "CODE": "Code",
+      "NAME": "Name",
+      "SHORT_NAME": "Short Name",
+      "DESC": "Describe",
+      "PID": "P_ID",
+      "SEQ": "Sequence",
+      "STATUS": "Status"
+    },
+    "MENU_PLACE": {
+      "PLACE_SEARCH": "Search Name",
+      "PLACE_ADD": "Add",
+      "PLACE_EDIT": "Edit",
+      "PLACE_DEL": "Delete",
+      "CODE": "Code",
+      "NAME": "Name",
+      "DESC": "Describe",
+      "SEQ": "Sequence",
+      "STATUS": "Status",
+      "LENGTH_CHECK_10": "* Length not exceeding 10!",
+      "LENGTH_CHECK_18": "* Length not exceeding 18!",
+      "CHARSET_CHECK": "* Cannot be Chinese characters!"
+    },
+    "MENU_GUESTGRADETYPE": {},
+    "MENU_GUESTNOTYPE": {
+      "NEW_GUEST_NO_TYPE_NAME": "Name",
+      "STATUS": "Status",
+      "NEW_TOP": "Top",
+      "NEW_BOTTOM": "Bottom",
+      "DESC": "Describe"
+    },
+    "MENU_PROMOTION": {},
+    "MENU_PROMOTION_ITEM": {},
+    "MENU_DATE": {
+      "NEW_HOLIDAY": "Holiday",
+      "NEW_EVENT": "Event"
+    }
+  }
+}

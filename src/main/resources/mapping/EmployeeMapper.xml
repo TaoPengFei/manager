@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sy.dao.IEmployeeDao" >
+  <resultMap id="BaseResultMap" type="com.sy.pojo.Employee" >
+    <result property="EmpId" column="EmpId" jdbcType="INTEGER" />
+    <result property="EmpNo" column="EmpNo" jdbcType="VARCHAR" />
+    <result property="EmpName" column="EmpName" jdbcType="VARCHAR" />
+    <result property="EmpPassword" column="EmpPassword" jdbcType="VARCHAR" />
+    <result property="DeptId" column="DeptId"  jdbcType="INTEGER" />
+    <result property="EmpBirth" column="EmpBirth"  jdbcType="VARCHAR" />
+    <result property="EmpStatus1" column="EmpStatus1"  jdbcType="INTEGER" />
+    <result property="EmpStatus2" column="EmpStatus2"  jdbcType="INTEGER" />
+    <result property="CreateTime" column="CreateTime"  jdbcType="DATE" />
+    <result property="UpdateTime" column="UpdateTime"  jdbcType="DATE" />
+  </resultMap>
+
+  <select id="ifExist" parameterType="com.sy.pojo.Employee" resultType="boolean">
+    select count(EmpId)  FROM Tbb_Employee
+    where EmpName = #{EmpName,jdbcType=VARCHAR}
+    and EmpPassword =#{EmpPassword,jdbcType=VARCHAR}
+  </select>
+
+  <select id="getEmpInfo" resultMap="BaseResultMap">
+    SELECT *
+    FROM Tbb_Employee
+    where EmpName = #{EmpName,jdbcType=VARCHAR}
+    and EmpPassword =#{EmpPassword,jdbcType=VARCHAR}
+  </select>
+
+  <select id="getEmpList" resultMap="BaseResultMap">
+    SELECT *
+    FROM Tbb_Employee
+    where EmpStatus1=1
+    and EmpStatus2=1
+  </select>
+
+  <insert id="insertEmp" parameterType="com.sy.pojo.Employee" >
+    begin
+    declare @EmpId int
+    select @EmpId = isnull(max(EmpId),0) from Tbb_Employee
+    insert into Tbb_Employee
+    select @EmpId+1,convert(varchar(20),1001+@EmpId),#{EmpName,jdbcType=VARCHAR},
+    #{EmpName,jdbcType=VARCHAR},#{DeptId,jdbcType=INTEGER},
+    #{EmpBirth,jdbcType=VARCHAR},#{EmpStatus1,jdbcType=INTEGER},
+    #{EmpStatus2,jdbcType=INTEGER},'测试2',
+    getdate(),null
+    end
+
+
+  </insert>
+
+</mapper>

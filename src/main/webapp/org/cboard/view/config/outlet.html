@@ -1,0 +1,109 @@
+<!-- Content Wrapper. Contains page content -->
+<meta charset="UTF-8">
+<!-- 改变页面乱码 -->
+<div id="inner-container">
+	<form role="form" id="empinfo-form" AUTOCOMPLETE="off">
+		<div class="row">
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 column">
+				<div class="input-group">
+
+					<span class="input-group-addon">{{'CONFIG.MENU_OUTLET.OUTLET_NAME'|translate}}</span>
+					<input type="text" placeholder="{{'COMMON.SEARCH'|translate}}"
+						class="form-control" id="outletName" ng-model="outletName">
+				</div>
+			</div>
+
+		</div>
+	</form>
+
+	<div class="row" style="margin-top: 10px; margin-bottom: 0px">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  column">
+			<table id="outletList" class="table table-bordered">
+				<thead>
+					<tr>
+						<!--  <th>
+                        <input type="checkbox" ng-model="selectAll"  ng-change="changeAll()" />
+                    </th> -->
+						<!-- <th>序号</th>
+                    <th>门店编码</th>
+                    <th>门店名称</th>
+                    <th>门店简称</th>
+                    <th>区域名称</th>
+                    <th>商圈名称</th>
+                    <th>品牌名称</th>
+                    <th>创建时间</th>
+                    <th>更新时间</th>
+                    <th>操作</th> -->
+						<th ng-repeat="headerInfo in headerInfos track by $index ">{{
+							headerInfo.name }}</th>
+					</tr>
+				</thead>
+
+				<tbody id="outletTable">
+
+					<tr ng-repeat="row in items" ng-init="outerIndex = $index"
+						ng-click="changeCurrents(row, $event)">
+
+						<td ng-bind="outerIndex+1"></td>
+						<!-- <td class="hidden-lg hidden-sm hidden-md hidden-xs">{{ row.OutletId }}</td> 隐藏列-->
+						<td>{{ row.OutletCode }}</td>
+						<td>{{ row.OutletName }}</td>
+						<td>{{ row.OutletShortName }}</td>
+						<td>{{ row.AreaName_level1 }}</td>
+						<td>{{ row.PlaceName }}</td>
+						<td>{{ row.BrandName_level1 }}</td>
+						<td>{{ row.CreateTime | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+						<td>{{ row.UpdateTime | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+
+						<!--  <td>1</td>
+                    <td>0001</td>
+                    <td>锅殿五角场店</td>
+                    <td>锅殿五角场店</td>
+                    <td>华东区</td>
+                    <td>商业中心</td>
+                    <td>锅殿</td>
+                    <td>2016-06-25 14:05:45</td>
+                    <td>2016-06-25 14:05:45</td> -->
+
+
+						<td>
+							<button type="button" class="btn btn-info btn-xs"
+								ng-click="editOutlet(row, $event)">
+								<span class="glyphicon glyphicon-pencil"></span>{{'CONFIG.MENU_OUTLET.MODIFY_PROPERTY'|translate}}
+							</button>
+
+						</td>
+					</tr>
+				</tbody>
+
+			</table>
+		</div>
+	</div>
+
+	<!-- pagination START-->
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  column">
+			<div class="pull-right">
+				<nav>
+					<ul class="pagination">
+						<li><a ng-click="Previous()" role="button"> <!-- <span role="button" >上一页</span> -->
+								<span role="button">&laquo;</span>
+						</a></li>
+						<li ng-repeat="page in pageList"
+							ng-class="{active: isActivePage(page)}" role="button"><a
+							ng-click="selectPage(page)">{{ page }}</a></li>
+						<li><a ng-click="Next()" role="button"> <!-- <span role="button" >下一页</span> -->
+								<span role="button">&raquo;</span>
+
+						</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<!-- pagination END-->
+
+
+
+
+</div>

@@ -1,0 +1,123 @@
+<!-- Content Wrapper. Contains page content -->
+<div id="inner-container">
+    <form role="form" id="empinfo-form" AUTOCOMPLETE="off">
+        <div class="row" style="margin-right: 0px;">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 column">
+                <div class="input-group">11111
+                    <span class="input-group-addon">{{'CONFIG.MENU_GUESTGRADETYPE.SEARCH'|translate}}</span>
+                    <input type="text" placeholder = "{{'COMMON.PLACEHOLDER'|translate}}" class="form-control glyphicon-remove" id="userName" ng-model="userName">
+                </div>
+            </div>
+            <div class="pull-right" style="margin-top: 10xp;">
+                <button type="button" class="btn btn-primary " id='addEmp' ng-click="addGuestGradeType()">{{'COMMON.ADD'|translate}}</button>
+                <!--<button type="button" class="btn btn-primary" id='delRole' ng-click="printUser()">{{'CONFIG.MENU_USER.PRINT'|translate}}</button>-->
+            </div>
+        </div>
+    </form>
+
+    <div class="row" style="margin-top: 10px; margin-bottom: 0px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
+            <table id="listGuestGradeType" class="table table-bordered"  ng-model="listGuestGradeType">
+                <thead>
+                    <tr>
+                        <th ng-repeat="headerInfo in guestgradetypeHeaderInfos track by $index " >{{ headerInfo.name }}</th>
+                    </tr>
+                </thead>
+                <tbody id="userTable" ng-model="userTable" interval-check>
+                <tr ng-repeat="row in guestGradeTypeList.data " ng-init="placeIndex = $index">
+                    <td>{{ row.GuestGradeTypeName }}</td>
+                    <td>{{ row.GuestGradeTypeDesc }}</td>
+                    <td>{{ row.BottomAmt }}</td>
+                    <td>{{ row.TopAmt }}</td>
+                    <!--<td>{{ row.Status }}</td>-->
+                    <td>{{ (row.Status == "0") ? "启用" : "淘汰" }}</td>
+                    <td>{{ row.CreateTime | date:'yyyy-MM-dd HH:mm:ss'  }}</td>
+                    <td>{{ row.UpdateTime | date:'yyyy-MM-dd HH:mm:ss'  }}</td>
+                    <!--<td ng-model="enabled">{{ row.enabled ? "启用" : "淘汰" }}</td>-->
+                    <td>
+                        <button type="button" class="btn btn-info btn-xs" ng-click="editGuestGradeType(row, $event)">
+                            <span class="glyphicon glyphicon-pencil"></span>{{'COMMON.EDIT'|translate}}
+                        </button>
+                        <button type="button" class="btn btn-success btn-xs"
+                                ng-class="{true:'trueClass',false:'falseClass'}[row.enabled]"
+                                ng-disabled="{{ (row.Status === '0') ? 'true' : 'false' }}"
+                                ng-click="enableGuestGradeType(row, $event)">
+                            <span class="glyphicon glyphicon-ok-circle"></span>{{'CONFIG.MENU_USER.ENABLE_OK'|translate}}
+                        </button>
+                        <button type="button" class="btn btn-danger btn-xs"
+                                ng-class="{true:'falseClass',false:'trueClass'}[row.enabled]"
+                                ng-disabled="{{ (row.Status === '0') ? 'false' : 'true' }}"
+                                ng-click="enableGuestGradeType(row, $event)">
+                            <span class="glyphicon glyphicon-remove-circle"></span>{{'CONFIG.MENU_USER.ENABLE_NO'|translate}}
+                        </button>
+                        <!--<button type="button" class="btn btn-danger btn-xs"
+                                ng-click="delGuestGradeType(row, $event)">
+                            <span class="glyphicon glyphicon-remove-circle"></span>{{'CONFIG.MENU_PLACE.PLACE_DEL'|translate}}
+                        </button>-->
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- pagination START-->
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  column">
+            <div class="pull-right">
+                <nav>
+                    <ul class="pagination">
+                        <li>
+                            <a ng-click="Previous()" role="button">
+                                <span role="button">&laquo;</span>
+                            </a>
+                        </li>
+                        <li ng-repeat="page in pageList" ng-class="{active: isActivePage(page)}" role="button">
+                            <a ng-click="selectPage(page)" >{{ page }}</a>
+                        </li>
+                        <li>
+                            <a ng-click="Next()" role="button">
+                                <span role="button" >&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- pagination END-->
+
+    <!--<div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  column">
+            &lt;!&ndash;<div id="myAlert" class="alert alert-success">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong>成功！</strong>结果是成功的。
+            </div>&ndash;&gt;
+            <div id="myAlert2" class="alert alert-danger">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong >警告！</strong>档次的上下限设置不合理。
+            </div>
+        </div>
+    </div>-->
+
+    <div class="row" >
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  column">
+            <!--<div id="myAlert" class="alert alert-success">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong>成功！</strong>结果是成功的。
+            </div>-->
+            <div id="myAlert1" class="alert alert-warning" ng-show="intervalCheck == '1'">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong >警告！</strong>档次的上下限设置不合理。
+            </div>
+            <!--<div id="myAlert2" class="alert alert-warning" ng-show="intervalCheck == '1'">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong >警告！</strong>档次的上下限设置不合理。
+            </div>-->
+        </div>
+    </div>
+
+
+
+</div>
+

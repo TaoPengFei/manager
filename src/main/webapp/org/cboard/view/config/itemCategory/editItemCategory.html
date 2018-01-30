@@ -1,0 +1,29 @@
+<div class="form-group">
+    <!--<h3 class="box-title" style="color: red">{{'CONFIG.MENU_BRAND.BRAND_PARENT'|translate}}{{curBrand}}</h3>-->
+    <label>{{'CONFIG.MENU_BRAND.BRAND_PARENT'|translate}}</label>
+    <input style="color: red" class="form-control input-sm" value="{{curBrand}}" disabled/>
+</div>
+<!-- 子品牌编码 -->
+<div class="form-group">
+    <label>{{'CONFIG.MENU_BRAND.BRAND_CODE'|translate}}</label>
+    <input type="text" class="form-control input-sm" name="Code" ng-model="addBrand.Code" required/>
+</div>
+<!-- 子品牌名称 -->
+<div class="form-group">
+    <label>{{'CONFIG.MENU_BRAND.BRAND_SUB_NAME'|translate}}</label>
+    <input type="text" class="form-control input-sm" name="Name" ng-model="addBrand.Name"/>
+</div>
+<!-- 子品牌描述 -->
+<div class="form-group">
+    <label>{{'CONFIG.MENU_BRAND.BRAND_DESC'|translate}}</label>
+    <!--<input ng-model="" class="form-control input-sm"/>-->
+    <textarea type="text" class="form-control" rows="3" col="12" id="addBrandDesc" name="Desc" placeholder=""
+              ng-model="addBrand.Desc"></textarea>
+</div>
+<div class="form-group">
+    <button type="submit" ng-click="canel()" class="btn btn-danger pull-right">{{'COMMON.CANCEL'|translate}}</button>
+    <button type="submit" name="submit" ng-click="saveNew()" class="btn btn-success pull-right"
+            style="margin-right: 5px">{{'COMMON.SAVE'|translate}}
+    </button>
+    <!--<button type="submit" ng-click="test()" class="btn btn-success pull-right" style="margin-right: 5px">{{'CONFIG.DATA_SOURCE.TEST'|translate}}</button>-->
+</div>

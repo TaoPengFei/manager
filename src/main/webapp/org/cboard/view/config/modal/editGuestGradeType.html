@@ -1,0 +1,133 @@
+<!--
+   Created by 陶鹏飞 on 2017/9/21.
+-->
+<form id="editGuestGradeTypeForm" class="form-horizontal" role="form" name="editGuestGradeTypeForm" ng-submit="ctrl.submit()">
+    <!-- 模态框header -->
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="close()">
+            <span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">{{'CONFIG.MENU_GUESTGRADETYPE.EDIT_TITLE'|translate}}</h4>
+    </div>
+
+    <!-- 模态框body -->
+    <div class="modal-body">
+        <div class="row">
+            <!-- 顾客档次名称 -->
+            <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12 column">
+                <div class="input-group has-feedback"
+                     ng-class="{'has-success' : editGuestGradeTypeForm.editGuestGradeTypeName.$valid,
+                              'has-error' : editGuestGradeTypeForm.editGuestGradeTypeName.$invalid }">
+                    <span class="input-group-addon">{{'CONFIG.MENU_GUESTGRADETYPE.MODAL_NAME'|translate}}</span>
+                    <input type="text" class="form-control" name="editGuestGradeTypeName" id="editGuestGradeTypeName"
+                           ng-maxlength="18"
+                           ng-model="editGuestGradeTypeName">
+                    <div ng-show="!editGuestGradeTypeForm.editGuestGradeTypeName.$invalid">
+                        <span class="glyphicon glyphicon-ok form-control-feedback text-success rigt"></span>
+                    </div>
+                    <div ng-show="editGuestGradeTypeForm.editGuestGradeTypeName.$invalid">
+                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    </div>
+                </div>
+                <div style="color: red" ng-show="editGuestGradeTypeForm.editGuestGradeTypeName.$invalid">
+                    <span ng-show="editGuestGradeTypeForm.editGuestGradeTypeName.$error.maxlength">
+                        {{'CONFIG.MENU_GUESTGRADETYPE.LENGTH_CHECK_18'|translate}}
+                    </span>
+                </div>
+            </div>
+            <!-- 顾客档次状态 -->
+            <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12 column">
+                <div class="input-group">
+                    <span class="input-group-addon">{{'CONFIG.MENU_GUESTGRADETYPE.MODAL_STATUS'|translate}}</span>
+                    <input type="text" class="form-control" id="editStatus" ng-model="editStatus">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1></h1>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <!-- 顾客档次下限 -->
+            <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
+                <div class="input-group has-feedback"
+                     ng-class="{'has-success' : editGuestGradeTypeForm.editBottomAmt.$valid,
+                              'has-error' : editGuestGradeTypeForm.editBottomAmt.$invalid }">
+                    <span class="input-group-addon">{{'CONFIG.MENU_GUESTGRADETYPE.MODAL_BOTTOM'|translate}}</span>
+                    <input type="text" class="form-control" name="editBottomAmt" id="editBottomAmt"
+                           pk-check="editTopAmt"
+                           ng-pattern="/^(-)?\d+(\.\d+)?$/"
+                           ng-model="editBottomAmt">
+                    <div ng-show="!editGuestGradeTypeForm.editBottomAmt.$invalid">
+                        <span class="glyphicon glyphicon-ok form-control-feedback text-success rigt"></span>
+                    </div>
+                    <div ng-show="editGuestGradeTypeForm.editBottomAmt.$invalid">
+                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    </div>
+                </div>
+                <div style="color: red" ng-show="editGuestGradeTypeForm.editBottomAmt.$invalid">
+                    <span ng-show="editGuestGradeTypeForm.editBottomAmt.$error.pattern">
+                        {{'CONFIG.MENU_GUESTGRADETYPE.NUMBER_CHECK'|translate}}
+                    </span>
+                </div>
+                <div style="color: red" ng-show="editGuestGradeTypeForm.editBottomAmt.$invalid">
+                    <span ng-show="editGuestGradeTypeForm.editBottomAmt.$error.peakCheck">
+                        {{'CONFIG.MENU_GUESTGRADETYPE.PEAK_CHECK'|translate}}
+                    </span>
+                </div>
+            </div>
+
+            <!-- 顾客档次上限 -->
+            <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
+                <div class="input-group has-feedback"
+                     ng-class="{'has-success' : editGuestGradeTypeForm.editTopAmt.$valid,
+                              'has-error' : editGuestGradeTypeForm.editTopAmt.$invalid }">
+                    <span class="input-group-addon">{{'CONFIG.MENU_GUESTGRADETYPE.MODAL_TOP'|translate}}</span>
+                    <input type="text" class="form-control" name="editTopAmt" id="editTopAmt"
+                           ng-pattern="/^(-)?\d+(\.\d+)?$/"
+                           ng-model="editTopAmt">
+                    <div ng-show="!editGuestGradeTypeForm.editTopAmt.$invalid">
+                        <span class="glyphicon glyphicon-ok form-control-feedback text-success rigt"></span>
+                    </div>
+                    <div ng-show="editGuestGradeTypeForm.editTopAmt.$invalid">
+                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    </div>
+                </div>
+                <div style="color: red" ng-show="editGuestGradeTypeForm.editTopAmt.$invalid">
+                    <span ng-show="editGuestGradeTypeForm.editTopAmt.$error.pattern">
+                        {{'CONFIG.MENU_GUESTGRADETYPE.NUMBER_CHECK'|translate}}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1></h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- 顾客档次描述 -->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
+                <div class="input-group has-feedback">
+                    <span class="input-group-addon">{{'CONFIG.MENU_GUESTGRADETYPE.MODAL_DESC'|translate}}</span>
+                    <textarea class="form-control" rows="3" col="12" id="editGuestGradeTypeDesc" placeholder=""
+                              ng-model="editGuestGradeTypeDesc"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模态框footer -->
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="btn_save"
+                ng-disabled="editGuestGradeTypeForm.$error.pattern[0].$invalid ||
+                            editGuestGradeTypeForm.$error.peakCheck[0].$invalid ||
+                            editGuestGradeTypeForm.$error.maxlength[0].$invalid"
+                ng-click="save()">{{'COMMON.SAVE'|translate}}</button>
+    </div>
+</form>

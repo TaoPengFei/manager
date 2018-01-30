@@ -1,0 +1,23 @@
+<!-- 区域编码 -->
+<div class="form-group">
+    <label>{{'CONFIG.MENU_AREA.EDIT_CODE'|translate}}</label>
+    <input class="form-control input-sm" value="{{curAreaCode}}" ng-model="editArea.Code"/>
+</div>
+<!-- 区域名称 -->
+<div class="form-group">
+    <label>{{'CONFIG.MENU_AREA.EDIT_NAME'|translate}}</label>
+    <input type="text" class="form-control input-sm"  ng-model="editArea.Name"/>
+</div>
+<!-- 区域描述 -->
+<div class="form-group">
+    <label>{{'CONFIG.MENU_AREA.EDIT_DESC'|translate}}</label>
+    <textarea type="text" class="form-control" rows="3" col="12" id="editAreaDesc" placeholder=""
+              ng-model="editArea.Desc"></textarea>
+</div>
+<div class="form-group">
+    <button type="submit" ng-click="canel()" class="btn btn-danger pull-right">{{'COMMON.CANCEL'|translate}}</button>
+    <button type="submit" name="submit" ng-click="saveEdit()" class="btn btn-success pull-right"
+            style="margin-right: 5px">{{'COMMON.SAVE'|translate}}
+    </button>
+    <!--<button type="submit" ng-click="test()" class="btn btn-success pull-right" style="margin-right: 5px">{{'CONFIG.DATA_SOURCE.TEST'|translate}}</button>-->
+</div>

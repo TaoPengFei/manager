@@ -1,0 +1,99 @@
+<!-- Content Wrapper. Contains page content -->
+<div id="inner-container">
+    <form role="form" id="empinfo-form" AUTOCOMPLETE="off">
+        <div class="row" style="margin-right: 0px;">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 column">
+                <div class="input-group">
+                    <span class="input-group-addon">{{'CONFIG.MENU_USER.USER_NAME'|translate}}</span>
+                    <input type="text" placeholder = "{{'CONFIG.MENU_USER.USER_SEARCH'|translate}}" class="form-control glyphicon-remove" id="userName" ng-model="userName">
+                </div>
+            </div>
+            <div class="pull-right" style="margin-top: 10xp;">
+                <button type="button" class="btn btn-primary " id='addEmp' ng-click="addUser()">{{'CONFIG.MENU_USER.ADD_USER'|translate}}</button>
+                <!--<button type="button" class="btn btn-primary" id='delRole' ng-click="printUser()">{{// 'CONFIG.MENU_USER.PRINT'|translate}}</button>-->
+            </div>
+        </div>
+    </form>
+
+    <div class="row" style="margin-top: 10px; margin-bottom: 0px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
+            <table id="listEmp" class="table table-bordered">
+                <thead>
+                <tr>
+                    <!--<th>序号</th>
+                    <th>用户名</th>
+                    <th>角色名称</th>
+                    <th>描述</th>
+                    <th>状态</th>
+                    <th>操作</th>-->
+                    <!-- ng-click=" toggleSort($index)" -->
+                    <th ng-repeat="headerInfo in headerInfos track by $index " >{{ headerInfo.name }}</th>
+                </tr>
+                </tr>
+                </thead>
+                <tbody id="userTable">
+                <!--
+                <tr ng-repeat="row in userList.data" ng-init="outerIndex = $index"> | filter:userName -->
+                <tr ng-repeat="row in items " ng-init="outerIndex = $index">
+                    <!-- $index 用于获取循环的当前索引
+                    <td>{{ $index + 1 }}</td>
+                    ng-class="{true:‘zhende‘,false:‘jiade‘}[x.enabled]"
+                    -->
+                    <td ng-bind="outerIndex+1"></td>
+                    <td>{{ row.userName }}</td>
+                    <td>{{ row.roleName }}</td>
+                    <td>{{ row.description }}</td>
+                    <td ng-model="enabled">{{ row.enabled ? "启用" : "淘汰" }}</td>
+                    <td>
+                        <button type="button" class="btn btn-info btn-xs" ng-click="modifyUser(row, $event)">
+                            <span class="glyphicon glyphicon-pencil"></span>{{'CONFIG.MENU_USER.MODIFY'|translate}}
+                        </button>
+                        <button type="button" class="btn btn-success btn-xs"
+                                ng-class="{true:'trueClass',false:'falseClass'}[row.enabled]"
+                                ng-disabled="{{ row.enabled ? 'true' : 'false' }}"
+                                ng-click="enableUser(row, $event)">
+                            <span class="glyphicon glyphicon-ok-circle"></span>{{'CONFIG.MENU_USER.ENABLE_OK'|translate}}
+                        </button>
+                        <button type="button" class="btn btn-danger btn-xs"
+                                ng-class="{true:'falseClass',false:'trueClass'}[row.enabled]"
+                                ng-disabled="{{ row.enabled ? 'false' : 'true' }}"
+                                ng-click="enableUser(row, $event)">
+                            <span class="glyphicon glyphicon-remove-circle"></span>{{'CONFIG.MENU_USER.ENABLE_NO'|translate}}
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- pagination START-->
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  column">
+            <div class="pull-right">
+                <nav>
+                    <ul class="pagination">
+                        <li>
+                            <a ng-click="Previous()" role="button">
+                                <!--<span role="button" >上一页</span>-->
+                                <span role="button">&laquo;</span>
+                            </a>
+                        </li>
+                        <li ng-repeat="page in pageList" ng-class="{active: isActivePage(page)}" role="button">
+                            <a ng-click="selectPage(page)" >{{ page }}</a>
+                        </li>
+                        <li>
+                            <a ng-click="Next()" role="button">
+                                <!--<span role="button" >下一页</span>-->
+                                <span role="button" >&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- pagination END-->
+
+</div>
+

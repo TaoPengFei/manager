@@ -1,0 +1,90 @@
+<!--
+   Created by 陶鹏飞 on 2017/9/21.
+-->
+
+<!-- 模态框header -->
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="close()">
+        <span aria-hidden="true">×</span></button>
+    <h4 class="modal-title">{{'CONFIG.MENU_OUTLET.MODIFY_PROPERTY'|translate}}</h4>
+</div>
+
+<!-- 模态框body -->
+<div class="modal-body">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12 column">
+            <div class="input-group">
+                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.CODE'|translate}}</span>
+                <input type="text" class="form-control" id="editItemDeptmentCode" ng-model="editItemDeptmentCode">
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12 column">
+            <div class="input-group">
+                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.NAME'|translate}}</span>
+                <input type="text" class="form-control" id="editItemDeptmentName" ng-model="editItemDeptmentName">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1></h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
+            <div class="input-group">
+                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.SHORT_NAME'|translate}}</span>
+                <input type="text" class="form-control" id="editItemDeptmentShortName" ng-model="editItemDeptmentShortName">
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
+            <div class="input-group">
+                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.PID'|translate}}</span>
+                <input type="text" class="form-control" id="editPID" ng-model="editPID">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1></h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
+            <div class="input-group">
+                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.SEQ'|translate}}</span>
+                <input type="text" class="form-control" id="editItemDeptmentSeq" ng-model="editItemDeptmentSeq">
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
+            <div class="input-group">
+                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.STATUS'|translate}}</span>
+                <input type="text" class="form-control" id="editItemDeptmentStatus" ng-model="editItemDeptmentStatus">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1></h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
+            <div class="input-group">
+                <span class="input-group-addon">{{'CONFIG.MENU_ITEMDEPTMENT.DESC'|translate}}</span>
+                <textarea class="form-control" rows="3" col="12" id="editItemDeptDesc" placeholder="" ng-model="editItemDeptDesc"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 模态框footer -->
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" id="btn_save" ng-click="save()">{{'CONFIG.MENU_USER.SAVE'|translate}}</button>
+</div>

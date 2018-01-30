@@ -1,0 +1,95 @@
+<!-- Content Wrapper. Contains page content -->
+<div id="inner-container">
+    <form role="form" id="empinfo-form" AUTOCOMPLETE="off">
+        <div class="row" >
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 column">
+                <div class="input-group">
+                    <!--<span class="input-group-addon">角色名称</span>{{'CONFIG.MENU_ROLE.ADD_USER'|translate}}-->
+                    <span class="input-group-addon">{{'CONFIG.MENU_ROLE.ROLE_NAME'|translate}}</span>
+                    <input type="text"  placeholder = "{{'CONFIG.MENU_ROLE.ROLE_SEARCH'|translate}}" class="form-control" id="roleName" ng-model="roleName">
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-6 col-xs-12 column">
+                <div class="pull-right" style="margin-top: 10xp;">
+                    <button type="button" class="btn btn-primary" id='addRole' ng-click="addRole()">{{'CONFIG.MENU_ROLE.ADD_ROLE'|translate}}</button>
+                    <!--<button type="button" class="btn btn-primary" id='delRole' ng-click="printRole()">{{'CONFIG.MENU_ROLE.PRINT'|translate}}</button>-->
+                    <!--
+                    <button type="button" class="btn btn-primary" id='delRole' ng-click="multipleDelRole()">删除</button>
+                    <!--
+                    <button type="button" class="btn btn-primary" id='queryRole' ng-click="queryRole()">查询</button>
+                    <button type="button" class="btn btn-info" id='reset'>重置</button>
+                    -->
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="row" style="margin-top: 10px; margin-bottom: 0px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  column">
+            <table id="roleList" class="table table-bordered">
+                <thead>
+                <tr>
+                    <!--<th>
+                        <input type="checkbox" ng-model="selectAll"  ng-change="changeAll()" />&lt;!&ndash;全选&ndash;&gt;
+                    </th>-->
+                    <th>序号</th>
+                    <th>角色名称</th>
+                    <th>角色描述</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody id="roleTable">
+                <!--
+                <tr ng-repeat="row in roleList.data" ng-init="outerIndex = $index" ng-click="changeCurrents(row, $event)">  -->
+                <tr ng-repeat="row in items" ng-init="outerIndex = $index" ng-click="changeCurrents(row, $event)">
+                    <!--<td><input type="checkbox" ng-model="row.checked" ng-click="changeCurrent(row, $event)" /></td>-->
+                    <!-- $index 用于获取循环的当前索引
+                    <td>{{ $index + 1 }}</td>-->
+                    <td ng-bind="outerIndex+1"></td>
+                    <td>{{ row.roleName }}</td>
+                    <td>{{ row.roleDesc }}</td>
+                    <td>
+                        <button type="button" class="btn btn-info btn-xs" ng-click="editRole(row, $event)">
+                            <span class="glyphicon glyphicon-pencil"></span>{{'CONFIG.MENU_ROLE.MODIFY'|translate}}
+                        </button>
+                        <!--<button type="button" class="btn btn-danger btn-xs" ng-click="singleDelRole(row, $event)">
+                            <span class="glyphicon glyphicon-trash"></span>{{'CONFIG.MENU_ROLE.DELETE'|translate}}
+                        </button>-->
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- pagination START-->
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  column">
+            <div class="pull-right">
+                <nav>
+                    <ul class="pagination">
+                        <li>
+                            <a ng-click="Previous()" role="button">
+                                <!--<span role="button" >上一页</span>-->
+                                <span role="button">&laquo;</span>
+                            </a>
+                        </li>
+                        <li ng-repeat="page in pageList" ng-class="{active: isActivePage(page)}" role="button">
+                            <a ng-click="selectPage(page)" >{{ page }}</a>
+                        </li>
+                        <li>
+                            <a ng-click="Next()" role="button">
+                                <!--<span role="button" >下一页</span>-->
+                                <span role="button" >&raquo;</span>
+
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- pagination END-->
+
+    <!--<tm-pagination conf="paginationConf"></tm-pagination>-->
+
+</div>

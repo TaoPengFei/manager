@@ -1,0 +1,51 @@
+<!--
+   Created by 陶鹏飞 on 2017/8/2.
+-->
+<form class="form-horizontal" role="form" name="roleForm" ng-submit="ctrl.submit()">
+    <!-- 模态框header -->
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="close()">
+            <span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">{{'CONFIG.MENU_ROLE.ADD_ROLE'|translate}}</h4>
+    </div>
+
+    <!-- 模态框body -->
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12 column">
+                <!--<div class="alert alert-danger" ng-show="roleForm.newRole.$error.ifRole">
+                    <a class="close" data-dismiss="alert">×</a>
+                    <strong>
+                        提示：
+                    </strong>角色已存在！
+                </div>-->
+                <br>
+                <div class="input-group">
+                    <span class="input-group-addon">{{'CONFIG.MENU_ROLE.ROLE_NAME'|translate}}</span>
+                    <input type="text" class="form-control" placeholder="{{'CONFIG.MENU_ROLE.ROLE_PLACEHOLDER'|translate}}" id="newRole" ng-model="newRole"
+                           name="newRole" ng-maxlength="20" required if-role>
+                    <span  class="glyphicon glyphicon-ok form-control-feedback text-success rigt"
+                           ng-show="roleForm.newRole.$valid"></span>
+                    <span  class="glyphicon glyphicon-remove form-control-feedback text-danger rigt"
+                           ng-show="roleForm.newRole.$error.ifRole"></span>
+                </div>
+                <span ng-show="roleForm.newRole.$error.ifRole" style="color:red">{{'CONFIG.MENU_ROLE.IF_ROLE'|translate}}</span>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12 column">
+                <div class="input-group">
+                    <span class="input-group-addon">{{'CONFIG.MENU_ROLE.DESC'|translate}}</span>
+                    <textarea class="form-control" rows="3" id="newDesc" placeholder="" ng-model="newDesc"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模态框footer -->
+    <div class="modal-footer">
+        <button type="submit" name="submit" class="btn btn-primary" id="btn_save" ng-click="save()" ng-disabled="roleForm.newRole.$error.ifRole">{{'CONFIG.MENU_ROLE.SAVE'|translate}}</button>
+    </div>
+</form>
+

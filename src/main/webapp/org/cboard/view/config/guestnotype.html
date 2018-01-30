@@ -1,0 +1,79 @@
+<!-- Content Wrapper. Contains page content -->
+<div id="inner-container">
+    <form role="form" id="empinfo-form" AUTOCOMPLETE="off">
+        <div class="row" style="margin-right: 0px;">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 column">
+                <div class="input-group">
+                    <span class="input-group-addon">{{'CONFIG.MENU_PLACE.PLACE_SEARCH'|translate}}</span>
+                    <input type="text" placeholder = "{{'CONFIG.MENU_USER.USER_SEARCH'|translate}}" class="form-control glyphicon-remove" id="userName" ng-model="userName">
+                </div>
+            </div>
+            <div class="pull-right" style="margin-top: 10xp;">
+                <button type="button" class="btn btn-primary " id='addGuestNoType' ng-click="addGuestNoType()">{{'CONFIG.MENU_PLACE.PLACE_ADD'|translate}}</button>
+                <!--<button type="button" class="btn btn-primary" id='delRole' ng-click="printUser()">{{'CONFIG.MENU_USER.PRINT'|translate}}</button>-->
+            </div>
+        </div>
+    </form>
+
+    <div class="row" style="margin-top: 10px; margin-bottom: 0px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
+            <table id="listPlace" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th ng-repeat="headerInfo in guestnotypeHeaderInfos track by $index " >{{ headerInfo.name }}</th>
+                    </tr>
+                </thead>
+                <tbody id="userTable">
+                <tr ng-repeat="row in guestNoTypeList.data " ng-init="placeIndex = $index">
+                    <td>{{ row.GuestNoTypeName }}</td>
+                    <td>{{ row.GuestNoTypeDesc }}</td>
+                    <td>{{ row.BottomGuestQty }}</td>
+                    <td>{{ row.TopGuestQty }}</td>
+                    <!--<td>{{ row.Status }}</td>-->
+                    <td>{{ (row.Status == '0') ? "启用" : "淘汰" }}</td>
+                    <td>{{ row.CreateTime | date:'yyyy-MM-dd HH:mm:ss'  }}</td>
+                    <td>{{ row.UpdateTime | date:'yyyy-MM-dd HH:mm:ss'  }}</td>
+                    <!--<td ng-model="enabled">{{ row.enabled ? "启用" : "淘汰" }}</td>-->
+                    <td>
+                        <button type="button" class="btn btn-info btn-xs" ng-click="editGuestNoType(row, $event)">
+                            <span class="glyphicon glyphicon-pencil"></span>{{'CONFIG.MENU_PLACE.PLACE_EDIT'|translate}}
+                        </button>
+                        <!--<button type="button" class="btn btn-danger btn-xs"
+                                ng-click="delGuestNoType(row, $event)">
+                            <span class="glyphicon glyphicon-remove-circle"></span>{{'CONFIG.MENU_PLACE.PLACE_DEL'|translate}}
+                        </button>-->
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- pagination START-->
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  column">
+            <div class="pull-right">
+                <nav>
+                    <ul class="pagination">
+                        <li>
+                            <a ng-click="Previous()" role="button">
+                                <span role="button">&laquo;</span>
+                            </a>
+                        </li>
+                        <li ng-repeat="page in pageList" ng-class="{active: isActivePage(page)}" role="button">
+                            <a ng-click="selectPage(page)" >{{ page }}</a>
+                        </li>
+                        <li>
+                            <a ng-click="Next()" role="button">
+                                <span role="button" >&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- pagination END-->
+
+</div>
+

@@ -1,0 +1,115 @@
+<!--
+   Created by 陶鹏飞 on 2017/9/21.
+-->
+<form id="editPlaceForm" class="form-horizontal" role="form" name="editPlaceForm" ng-submit="ctrl.submit()">
+    <!-- 模态框header -->
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="close()">
+            <span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">{{'CONFIG.MENU_OUTLET.MODIFY_PROPERTY'|translate}}</h4>
+    </div>
+
+    <!-- 模态框body -->
+    <div class="modal-body">
+        <div class="row">
+            <!-- 商圈编码 -->
+            <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12 column"
+                 ng-class="{'has-success' : editPlaceForm.editPlaceCode.$valid,
+                              'has-error' : editPlaceForm.editPlaceCode.$invalid }">
+                <div class="input-group has-feedback">
+                    <span class="input-group-addon">{{'CONFIG.MENU_PLACE.CODE'|translate}}</span>
+                    <input type="text" class="form-control" id="editPlaceCode" name="editPlaceCode"
+                           ng-model="editPlaceCode"
+                           ng-maxlength="10"
+                           ng-pattern="/[^\u4E00-\u9FA5]+$/" required>
+                    <div ng-show="!editPlaceForm.editPlaceCode.$invalid">
+                        <span class="glyphicon glyphicon-ok form-control-feedback text-success rigt"></span>
+                    </div>
+                    <div ng-show="editPlaceForm.editPlaceCode.$invalid">
+                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    </div>
+                </div>
+                <div style="color: red" ng-show="editPlaceForm.editPlaceCode.$invalid">
+                    <span ng-show="editPlaceForm.editPlaceCode.$error.maxlength">
+                        {{'CONFIG.MENU_PLACE.LENGTH_CHECK_18'|translate}}
+                    </span>
+                    <br ng-show="editPlaceForm.editPlaceCode.$error.maxlength">
+                    <span ng-show="editPlaceForm.editPlaceCode.$error.pattern">
+                        {{'CONFIG.MENU_PLACE.CHARSET_CHECK'|translate}}
+                    </span>
+                </div>
+            </div>
+
+            <!-- 商圈名称 -->
+            <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12 column">
+                <div class="input-group has-feedback"
+                     ng-class="{'has-success' : editPlaceForm.editPlaceName.$valid,
+                              'has-error' : editPlaceForm.editPlaceName.$invalid  }">
+                    <span class="input-group-addon">{{'CONFIG.MENU_PLACE.NAME'|translate}}</span>
+                    <input type="text" class="form-control" name="editPlaceName" id="editPlaceName"
+                           ng-maxlength="18"
+                           ng-model="editPlaceName" required>
+                    <div ng-show="!editPlaceForm.editPlaceName.$invalid">
+                        <span class="glyphicon glyphicon-ok form-control-feedback text-success rigt"></span>
+                    </div>
+                    <div ng-show="editPlaceForm.editPlaceName.$invalid">
+                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    </div>
+                </div>
+                <div style="color: red" ng-show="editPlaceForm.editPlaceName.$invalid">
+                    <span ng-show="editPlaceForm.editPlaceName.$error.maxlength">
+                        {{'CONFIG.MENU_PLACE.LENGTH_CHECK_18'|translate}}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="row">
+            <div class="col-md-12">
+                <h1></h1>
+            </div>
+        </div>-->
+
+        <!--<div class="row">
+            <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
+                <div class="input-group">
+                    <span class="input-group-addon">{{'CONFIG.MENU_PLACE.SEQ'|translate}}</span>
+                    <input type="text" class="form-control" id="editPlaceSeq" ng-model="editPlaceSeq">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-6 col-xs-12">
+                <div class="input-group">
+                    <span class="input-group-addon">{{'CONFIG.MENU_PLACE.STATUS'|translate}}</span>
+                    <input type="text" class="form-control" id="editStatus" ng-model="editStatus">
+                </div>
+            </div>
+        </div>-->
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1></h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
+                <div class="input-group">
+                    <span class="input-group-addon">{{'CONFIG.MENU_PLACE.DESC'|translate}}</span>
+                    <textarea class="form-control" rows="3" col="12" id="editPlaceDesc" placeholder=""
+                              ng-model="editPlaceDesc"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模态框footer -->
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="btn_save"
+                ng-disabled="editPlaceForm.$error.pattern[0].$invalid ||
+                            editPlaceForm.$error.required[0].$invalid ||
+                            editPlaceForm.$error.maxlength[0].$invalid"
+                ng-click="save()">
+            {{'CONFIG.MENU_USER.SAVE'|translate}}
+        </button>
+    </div>
+</form>

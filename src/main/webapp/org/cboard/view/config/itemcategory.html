@@ -1,0 +1,82 @@
+<!-- Content Wrapper. Contains page content -->
+<div id="inner-container">
+    <div class="row">
+        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+            <!--<ul tree id="treeDemo" class="ztree" ng-model="selectNode"></ul>-->
+            <!-- <button class="btn btn-success btn-block margin-bottom" ng-click="newDs()">
+                 New
+             </button>-->
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">{{'CONFIG.MENU_BRAND.BRAND_NAME'|translate}}</h3>
+                </div>
+                <div class="box-body no-padding">
+                    <!--<div class="box-body">-->
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <ul item id="treeDemo" class="ztree" ng-model="selectNode"></ul>
+                            <!--<pre>
+                                &lt;!&ndash;{{selectNode | json}}&ndash;&gt;
+                                {{zNodesJSON | json}}
+                            </pre>-->
+                        </div>
+                    </div>
+                    <!--</form>-->
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                        <!-- pagination START-->
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  column">
+                                <div class="pull-right">
+                                    <nav>
+                                        <ul class="pagination">
+                                            <li>
+                                                <a ng-click="Previous()" role="button">
+                                                    <!--<span role="button" >上一页</span>-->
+                                                    <span role="button">&laquo;</span>
+                                                </a>
+                                            </li>
+                                            <li ng-repeat="page in pageList" ng-class="{active: isActivePage(page)}" role="button">
+                                                <a ng-click="selectPage(page)" >{{ page }}</a>
+                                            </li>
+                                            <li>
+                                                <a ng-click="Next()" role="button">
+                                                    <!--<span role="button" >下一页</span>-->
+                                                    <span role="button" >&raquo;</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-footer-->
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+            <div class="box" ng-show="optFlag == 'editItemCategory'">
+                <div class="box-header with-border">
+                    <!--<h3 class="box-title">{{curDatasource.name}}</h3>-->
+                    <h3 ng-show="optFlag == 'editItemCategory'" class="box-title">{{'CONFIG.MENU_BRAND.BRAND_ADD'|translate}}</h3>
+                    <!--<h3 ng-show="optFlag == 'editBrand'" class="box-title">{{'CONFIG.MENU_BRAND.BRAND_EDIT'|translate}}</h3>-->
+                </div>
+                <div class="box-body">
+                    <div ng-show="optFlag == 'editItemCategory'"
+                         ng-include="'org/cboard/view/config/itemCategory/editItemCategory.html'"></div> <!--losing scope when using ng-include-->
+                    <!--<div ng-show="optFlag == 'editBrand'"-->
+                         <!--ng-include="'org/cboard/view/config/brand/editBrand.html'"></div> &lt;!&ndash;losing scope when using ng-include&ndash;&gt;-->
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                </div>
+                <!-- /.box-footer-->
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+</div>

@@ -1,0 +1,170 @@
+{
+  "COMMON": {
+    "OK": "确认",
+    "CANCEL": "取消",
+    "SAVE": "保存",
+    "LOADING": "玩命加载中...",
+    "REFRESH": "刷新",
+    "EDIT": "编辑",
+    "CONFIRM_DELETE": "真的想好了要删除吗!!!",
+    "TIP": "提示",
+    "SUCCESS": "成功!",
+    "FAIL": "失败!",
+    "PLACEHOLDER": "--- 请输入 ---",
+    "ADD": "新增",
+    "EDIT": "修改"
+  },
+  "HEADER": {
+    "SIGN_OUT": "注销",
+    "CHANGE_PASSWORD": "更改密码",
+    "CURRENT_PASSWORD": "当前密码",
+    "NEW_PASSWORD": "新的密码",
+    "CONFIRM_PASSWORD": "确认密码"
+  },
+  "SIDEBAR": {
+    "MY_DASHBOARD": "我的仪表盘",
+    "MY_REPORTER": "我的报表",
+    "CONFIG": {
+      "MENU": "权限配置",
+      "MENU_USER": "人员维护",
+      "MENU_ROLE": "角色维护",
+      "MENU_ROLE_MENU": "角色菜单维护",
+      "MENU_ROLE_MENU_TREE": "角色菜单树",
+      "MENU_BRAND": "品牌维护",
+      "MENU_AREA": "区域维护",
+      "MENU_OUTLET": "门店维护",
+      "MENU_COMMUNICATION": "通讯报表",
+      "MENU_ITEMCATEGORY": "商品分类",
+      "MENU_ITEMDEPTMENT": "餐品部门",
+      "MENU_PLACE": "商圈",
+      "MENU_GUESTGRADETYPE": "顾客档次",
+      "MENU_GUESTNOTYPE": "人数档次",
+      "MENU_PROMOTION": "促销主题",
+      "MENU_PROMOTION_ITEM": "促销相关商品",
+      "MENU_DATE": "日历维护 "
+    }
+  },
+  "CONFIG": {
+    "MENU_USER": {
+      "USER_NAME": "用户名",
+      "USER_SEARCH": "---请输入---",
+      "ADD_USER": "新增",
+      "PRINT": "打印",
+      "MODIFY": "修改",
+      "ENABLE_OK": "启用",
+      "ENABLE_NO": "淘汰",
+      "USER_ROLE": "用户角色",
+      "NEW_PWD": "新密码",
+      "CONFIRM_PWD": "确认新密码",
+      "DESC": "描述",
+      "SAVE": "保存",
+      "NEW_PLACEHOLDER": "请输入密码",
+      "CONFIRM_PLACEHOLDER": "请再次输入密码",
+      "CONFIRM_USER_MSG": "* 两次密码输入不一致"
+    },
+    "MENU_ROLE": {
+      "ROLE_NAME": "角色名称",
+      "ROLE_SEARCH": "---请输入---",
+      "ADD_ROLE": "新增",
+      "PRINT": "打印",
+      "MODIFY": "修改",
+      "DELETE": "删除",
+      "ROLE_PLACEHOLDER": "请确定输入的角色名称是否已经存在!",
+      "IF_ROLE": "* 角色已存在！",
+      "DESC": "描述",
+      "SAVE": "保存"
+    },
+    "MENU_ROLE_MENU": {
+      "USER_ROLE_NAME": "用户角色",
+      "USER_ROLE_SEARCH": "--- 请输入 ---",
+      "ROLE_WITHOUT_MENU": "角色未添加菜单",
+      "ROLE_WITH_MENU": "角色已有菜单",
+      "ADD_USER_ROLE": "新增",
+      "DELETE": "删除"
+    },
+    "MENU_BRAND": {
+      "BRAND_NAME": "品牌树",
+      "BRAND_ADD": "添加子品牌",
+      "BRAND_PARENT": "当前主品牌",
+      "BRAND_CODE": "子品牌编码",
+      "BRAND_SUB_NAME": "子品牌名称",
+      "BRAND_DESC": "子品牌描述",
+      "BRAND_EDIT": "修改品牌",
+      "EDIT_CODE": "品牌编码",
+      "EDIT_NAME": "品牌名称",
+      "EDIT_DESC": "品牌描述"
+    },
+    "MENU_AREA": {
+      "AREA_NAME": "区域树",
+      "AREA_ADD": "添加子区域",
+      "AREA_PARENT": "当前主区域",
+      "AREA_CODE": "子区域编码",
+      "AREA_SUB_NAME": "子区域名称",
+      "AREA_DESC": "子区域描述",
+      "AREA_EDIT": "修改区域",
+      "EDIT_CODE": "区域编码",
+      "EDIT_NAME": "区域名称",
+      "EDIT_DESC": "区域描述"
+    },
+    "MENU_OUTLET": {
+      "OUTLET_NAME": "门店名称",
+      "MODIFY_PROPERTY": "修改属性",
+      "AREA_NAME": "区域名称",
+      "PLACE_NAME": "商圈名称",
+      "BRAND_NAME": "品牌名称"
+    },
+    "MENU_ITEMCATEGORY": {
+
+    },
+    "MENU_ITEMDEPTMENT": {
+      "CODE": "编码",
+      "NAME": "名称",
+      "SHORT_NAME": "简称",
+      "DESC": "描述",
+      "PID": "父部门ID",
+      "SEQ": "序列",
+      "STATUS": "状态"
+    },
+    "MENU_PLACE": {
+      "PLACE_SEARCH": "名称查询",
+      "PLACE_ADD": "新增",
+      "PLACE_EDIT": "修改",
+      "PLACE_DEL": "删除",
+      "CODE": "编码",
+      "NAME": "名称",
+      "DESC": "描述",
+      "SEQ": "序号",
+      "STATUS": "状态",
+      "LENGTH_CHECK_10": "* 长度不超过10",
+      "LENGTH_CHECK_18": "* 长度不超过18",
+      "CHARSET_CHECK": "* 不能为汉字"
+    },
+    "MENU_GUESTGRADETYPE": {
+      "SEARCH": "顾客档次名称查询",
+      "ADD_TITLE": "新增顾客档次",
+      "EDIT_TITLE": "修改顾客档次",
+      "MODAL_NAME": "顾客档次名称",
+      "MODAL_STATUS": "顾客档次状态",
+      "MODAL_TOP": "顾客档次上限",
+      "MODAL_BOTTOM": "顾客档次下限",
+      "MODAL_DESC": "顾客档次描述",
+      "LENGTH_CHECK_18": "* 长度不超过18",
+      "NUMBER_CHECK": "* 不合法的数值类型",
+      "MUST_INPUT": "* 必填",
+      "PEAK_CHECK": "* 下限值设定不得大于上限值"
+    },
+    "MENU_GUESTNOTYPE": {
+      "NEW_GUEST_NO_TYPE_NAME": "名称",
+      "STATUS": "状态",
+      "NEW_TOP": "上限",
+      "NEW_BOTTOM": "下限",
+      "DESC": "描述"
+    },
+    "MENU_PROMOTION": {},
+    "MENU_PROMOTION_ITEM": {},
+    "MENU_DATE": {
+      "NEW_HOLIDAY": "假期",
+      "NEW_EVENT": "事件"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+<!-- Content Wrapper. Contains page content -->
+<div id="inner-container">
+    <div class="row">
+        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+            <!--<ul tree id="treeDemo" class="ztree" ng-model="selectNode"></ul>-->
+            <!-- <button class="btn btn-success btn-block margin-bottom" ng-click="newDs()">
+                 New
+             </button>-->
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">{{'CONFIG.MENU_AREA.AREA_NAME'|translate}}</h3>
+                </div>
+                <div class="box-body no-padding">
+                    <!--<div class="box-body">-->
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <ul area id="areaTree" class="ztree" ng-model="selectArea"></ul>
+                        </div>
+                    </div>
+                    <!--</form>-->
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                    </div>
+                    <!-- /.box-footer-->
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+            <div class="box" ng-show="optFlagArea == 'addArea' || optFlagArea == 'editArea'">
+                <div class="box-header with-border">
+                    <!--<h3 class="box-title">{{curDatasource.name}}</h3>-->
+                    <h3 ng-show="optFlagArea == 'addArea'" class="box-title">{{'CONFIG.MENU_AREA.AREA_ADD'|translate}}</h3>
+                    <h3 ng-show="optFlagArea == 'editArea'" class="box-title">{{'CONFIG.MENU_AREA.AREA_EDIT'|translate}}</h3>
+                </div>
+                <div class="box-body">
+                    <div ng-show="optFlagArea == 'addArea'"
+                         ng-include="'org/cboard/view/config/area/addArea.html'"></div> <!--losing scope when using ng-include-->
+                    <div ng-show="optFlagArea == 'editArea'"
+                         ng-include="'org/cboard/view/config/area/editArea.html'"></div> <!--losing scope when using ng-include-->
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                </div>
+                <!-- /.box-footer-->
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>

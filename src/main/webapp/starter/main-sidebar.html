@@ -1,0 +1,114 @@
+<!-- sidebar: style can be found in sidebar.less -->
+<section class="sidebar">
+
+     <!--Sidebar user panel (optional)-->
+    <div class="user-panel">
+        <div class="pull-left image">
+            <img src="{{avatar}}" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+            <!--<p>{{user.username}}</p>-->
+           <!-- <p>{{sessionUser.name}}</p>-->
+            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+    </div>
+    <!-- Sidebar Menu -->
+    <ul class="sidebar-menu">
+        <li class="header">MENU</li>
+        <!-- DashBoard -->
+        <!--<li class="treeview" ui-sref-active="active">
+            <a ui-sref="dashboard">
+                <i class="fa fa-th"></i>
+                <span>{{'SIDEBAR.MY_DASHBOARD'|translate}}</span>
+                <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+            </a>
+        </li>
+        <li class="treeview" ui-sref-active="active">
+            <a ui-sref="mine">
+                <i class="fa fa-th"></i>
+                <span>{{'SIDEBAR.MY_REPORTER'|translate}}</span>
+                <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+            </a>
+        </li>-->
+        <!-- Config -->
+        <li class="active treeview" ui-sref-active="active">
+            <a ui-sref="config">
+                <i class="fa fa-cog"></i>
+                <span>{{'SIDEBAR.CONFIG.MENU'|translate}}</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <!--menu-open style="display: block;" -->
+            <ul class="active treeview-menu">
+                <li ui-sref-active="active">
+                    <a ui-sref="config.user"><i class="fa fa-circle-o"></i>{{'SIDEBAR.CONFIG.MENU_USER'|translate}}</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="config.role"><i class="fa fa fa-circle-o"></i>{{'SIDEBAR.CONFIG.MENU_ROLE'|translate}}</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="config.roleMenu"><i class="fa fa fa-circle-o"></i>{{'SIDEBAR.CONFIG.MENU_ROLE_MENU'|translate}}</a>
+                </li>
+                <!--<li ui-sref-active="active">
+                    <a ui-sref="config.roleMenuTree"><i class="fa fa fa-circle-o"></i>{{'SIDEBAR.CONFIG.MENU_ROLE_MENU_TREE'|translate}}</a>
+                </li>-->
+                <!-- 品牌维护 -->
+                <li ui-sref-active="active">
+                    <a ui-sref="config.brand"><i class="fa fa fa-circle-o"></i>{{'SIDEBAR.CONFIG.MENU_BRAND'|translate}}</a>
+                </li>
+                <!-- 区域维护 -->
+                <li ui-sref-active="active">
+                    <a ui-sref="config.area"><i class="fa fa fa-circle-o"></i>{{'SIDEBAR.CONFIG.MENU_AREA'|translate}}</a>
+                </li>
+                <!-- 门店维护 -->
+                <!--<li ui-sref-active="active">
+                    <a ui-sref="config.outlet"><i class="fa fa fa-circle-o"></i>{{'SIDEBAR.CONFIG.MENU_OUTLET'|translate}}</a>
+                </li>-->
+                <!-- 通讯报表 -->
+                <!--<li ui-sref-active="active">
+                    <a ui-sref="config.communication"><i class="fa fa fa-circle-o"></i>{{'SIDEBAR.CONFIG.MENU_COMMUNICATION'|translate}}</a>
+                </li>-->
+                <!-- 商品分类 -->
+                <!--<li ui-sref-active="active">
+                    <a ui-sref="config.itemcategory"><i class="fa fa fa-circle-o"></i>{{'SIDEBAR.CONFIG.MENU_ITEMCATEGORY'|translate}}</a>
+                </li>-->
+                <!-- 餐品部门 -->
+                <li ui-sref-active="active">
+                    <a ui-sref="config.itemdeptment"><i class="fa fa fa-circle-o"></i>{{'SIDEBAR.CONFIG.MENU_ITEMDEPTMENT'|translate}}</a>
+                </li>
+                <!-- 商圈 -->
+                <li ui-sref-active="active">
+                    <a ui-sref="config.place"><i class="fa fa fa-circle-o"></i>{{'SIDEBAR.CONFIG.MENU_PLACE'|translate}}</a>
+                </li>
+                <!-- 顾客档次 -->
+                <li ui-sref-active="active">
+                    <a ui-sref="config.guestgradetype"><i class="fa fa fa-circle-o"></i>{{'SIDEBAR.CONFIG.MENU_GUESTGRADETYPE'|translate}}</a>
+                </li>
+                <!-- 人数档次 -->
+                <li ui-sref-active="active">
+                    <a ui-sref="config.guestnotype"><i class="fa fa fa-circle-o"></i>{{'SIDEBAR.CONFIG.MENU_GUESTNOTYPE'|translate}}</a>
+                </li>
+                <!-- 促销主题 -->
+                <!--<li ui-sref-active="active">
+                    <a ui-sref="config.promotion"><i class="fa fa fa-circle-o"></i>{{'SIDEBAR.CONFIG.MENU_PROMOTION'|translate}}</a>
+                </li>-->
+                <!-- 促销相关商品 -->
+                <!--<li ui-sref-active="active">
+                    <a ui-sref="config.promotionitem"><i class="fa fa fa-circle-o"></i>{{'SIDEBAR.CONFIG.MENU_PROMOTION_ITEM'|translate}}</a>
+                </li>-->
+                <!-- 日历维护 -->
+                <li ui-sref-active="active">
+                    <a ui-sref="config.date"><i class="fa fa fa-circle-o"></i>{{'SIDEBAR.CONFIG.MENU_DATE'|translate}}</a>
+                </li>
+
+                <li ui-sref-active="active">
+                    <a ><i class="fa fa fa-circle-o"></i>领用查询</a>
+                </li>
+
+            </ul>
+        </li>
+    </ul>
+    <!-- /.sidebar-menu -->
+</section>
+<!-- /.sidebar -->
