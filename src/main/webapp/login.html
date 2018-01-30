@@ -50,17 +50,17 @@
             display: inline;
         }
         .panel {
-             margin-bottom: 0px;
-             background-color: white;
-             border: 0px solid transparent;
-             border-radius: 0px;
-             -webkit-box-shadow: 0 0px 0px rgba(0,0,0,.05);
-             box-shadow: 0 0px 0px rgba(0,0,0,.05);
+            margin-bottom: 0px;
+            background-color: white;
+            border: 0px solid transparent;
+            border-radius: 0px;
+            -webkit-box-shadow: 0 0px 0px rgba(0,0,0,.05);
+            box-shadow: 0 0px 0px rgba(0,0,0,.05);
         }
         .panel-default>.panel-heading {
-             /*color: silver*/
-             background-color: white;
-             border-color: white;
+            /*color: silver*/
+            background-color: white;
+            border-color: white;
         }
 
     </style>
@@ -112,57 +112,43 @@
                 console.log(statusLang);
                 var username = $("#username").val();
                 var pwd = $("#pwd").val();
-                var kaptchaimage = $("#captcha").val();
+
                 alert(username);
                 $("#btn-login").button('loading');
                 $.ajax({
-                    type:"POST",
-                    url : './user/login.do',
+                    type:"GET",
+                    url : './employee/login.do',
                     dataType: "json",
                     async:false,
                     cache:false,
                     data:{
                         name: username,
                         password: pwd,
-                        kaptchaimage: kaptchaimage,
                         enabled: true
                     },
                     success:function(data,textStatus){
                         if(data){
                             console.log(data);
-                            if(data.constructor == String){
-                                data = eval("("+data+")");
-                            }
-                            var notecode = data.code;
+                            var notecode = data.IfExit;
+                            alert(notecode);
                             $("#btn-login").button('reset');
-                            if(notecode == "1"){
-                                document.location.href= "starter.html?lang=" + statusLang;
-                            }else if(notecode == "2"){
-                                if($("#btnClose").length > 0){
-                                    $("#btnClose").trigger("click");
-                                }
-                                $("#btn-login").button('reset');
-                                $("#login-form").prepend("<div class='alert alert-danger' role='alert'><button type='button' class='close' data-dismiss='alert' id='btnClose'><span aria-hidden='true'>&times;</span><span class='sr-only'>Close</span></button><strong>登陆失败！</strong> 1验证码错误，请重试！</div>");
-
+                            if(notecode == "true"){
+                                document.location.href= "starter.html?lang=" + "cn";
                             }else {
-                                if($("#btnClose").length > 0){
-                                    $("#btnClose").trigger("click");
-                                }
-                                $("#btn-login").button('reset');
                                 $("#login-form").prepend("<div class='alert alert-danger' role='alert'><button type='button' class='close' data-dismiss='alert' id='btnClose'><span aria-hidden='true'>&times;</span><span class='sr-only'>Close</span></button><strong>登陆失败！</strong> 2用户名或密码错误，请重试！</div>");
                             }
                         }
                     },
                     error:function(XMLHttpRequest, textStatus, errorThrown){
-                        alert(123);
-                        alert(XMLHttpRequest);
+                        console.log(XMLHttpRequest);
+                        console.log(textStatus);
+                        console.log(errorThrown);
 
-                        alert(textStatus);
                         if($("#btnClose").length > 0){
                             $("#btnClose").trigger("click");
                         }
                         $("#btn-login").button('reset');
-                        $("#login-form").prepend("<div class='alert alert-danger' role='alert'><button id='btnClose' type='button' class='close' data-dismiss='alert'><span aria-hidden='true'>&times;</span><span class='sr-only'>Close</span></button><strong>登陆失败！</strong> error123456用户名或密码错误，请重试！</div>");
+                        $("#login-form").prepend("<div class='alert alert-danger' role='alert'><button id='btnClose' type='button' class='close' data-dismiss='alert'><span aria-hidden='true'>&times;</span><span class='sr-only'>Close</span></button><strong>登陆失败！</strong> error用户名或密码错误，请重试！</div>");
                     }
                 });
             });
