@@ -40,13 +40,11 @@
     select @EmpId = isnull(max(EmpId),0) from Tbb_Employee
     insert into Tbb_Employee
     select @EmpId+1,convert(varchar(20),1001+@EmpId),#{EmpName,jdbcType=VARCHAR},
-    #{EmpName,jdbcType=VARCHAR},#{DeptId,jdbcType=INTEGER},
+    #{EmpPassword,jdbcType=VARCHAR},#{DeptId,jdbcType=INTEGER},
     #{EmpBirth,jdbcType=VARCHAR},#{EmpStatus1,jdbcType=INTEGER},
-    #{EmpStatus2,jdbcType=INTEGER},'测试2',
+    #{EmpStatus2,jdbcType=INTEGER},'增加人员',
     getdate(),null
     end
-
-
   </insert>
 
 </mapper>

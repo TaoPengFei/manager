@@ -117,7 +117,7 @@
                 $("#btn-login").button('loading');
                 $.ajax({
                     type:"GET",
-                    url : './user/login.do',
+                    url : './employee/login.do',
                     dataType: "json",
                     async:false,
                     cache:false,
@@ -134,7 +134,7 @@
                             $("#btn-login").button('reset');
                             if(notecode == "true"){
                                 document.location.href= "starter.html?lang=" + "cn";
-                            }else if(notecode == "2"){
+                            }else if(notecode == "false"){
                                 if($("#btnClose").length > 0){
                                     $("#btnClose").trigger("click");
                                 }
