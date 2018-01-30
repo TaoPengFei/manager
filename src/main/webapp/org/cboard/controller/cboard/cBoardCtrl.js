@@ -24,10 +24,10 @@ cBoard.controller('cBoardCtrl', function ($rootScope, $scope, $location, $http, 
     $http({
         method: 'get',
         // url: '../user/user.do'
-        url: './user/getSessionUsername.do'
+        url: './employee/getSessionUsername.do'
     }).success(function (response) {
         $scope.sessionUser = response.code;
-        console.log(response);
+        console.log($scope.sessionUser);
     }).error(function (XMLHttpRequest, textStatus, errorThrown) {
         ModalUtils.alert(translate(errorThrown + "!"), "modal-danger", "sm");
     });
