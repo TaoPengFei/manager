@@ -58,8 +58,6 @@ public class EmpController {
         return result;
     }
 
-
-
     @RequestMapping("/getEmpInfo.do")
     @ResponseBody
     public List<Employee> getEmpInfo(@RequestParam("name") String username, @RequestParam("password") String password) {
