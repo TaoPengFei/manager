@@ -88,6 +88,9 @@ public class EmpController {
     public JSONArray getEmpList() {
         List<Employee> list = iEmpService.getEmpList();
         JSONArray jsonArray = new JSONArray();
+        if (list==null ||list.isEmpty()) {
+            return jsonArray;
+        }
         for (Object object : list) {
             jsonArray.add(object);
         }
