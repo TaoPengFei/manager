@@ -24,6 +24,7 @@ public class EmpController {
     @ResponseBody
     public HashMap<String,Object> UserLogin(@RequestParam("name") String username, @RequestParam("password") String password) {
 
+
         System.out.println(username);
         System.out.println(password);
         emp.setEmpName(username);
@@ -33,7 +34,7 @@ public class EmpController {
         HashMap<String,Object> result = new HashMap<String,Object>();
         System.out.println(EmpExit);
 
-        result.put("IfExit",EmpExit);
+        result.put("IfExit",EmpExit+"");
         System.out.println(result);
         return result;
     }

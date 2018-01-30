@@ -129,26 +129,14 @@
                     success:function(data,textStatus){
                         if(data){
                             console.log(data);
-
-                            var notecode = data.ifexit;
+                            var notecode = data.IfExit;
+                            alert(notecode);
                             $("#btn-login").button('reset');
                             if(notecode == "true"){
                                 document.location.href= "starter.html?lang=" + "cn";
-                            }else if(notecode == "false"){
-                                if($("#btnClose").length > 0){
-                                    $("#btnClose").trigger("click");
-                                }
-                                $("#btn-login").button('reset');
-                                $("#login-form").prepend("<div class='alert alert-danger' role='alert'><button type='button' class='close' data-dismiss='alert' id='btnClose'><span aria-hidden='true'>&times;</span><span class='sr-only'>Close</span></button><strong>登陆失败！</strong> 1验证码错误，请重试！</div>");
-
                             }else {
-                                if($("#btnClose").length > 0){
-                                    $("#btnClose").trigger("click");
-                                }
-                                $("#btn-login").button('reset');
                                 $("#login-form").prepend("<div class='alert alert-danger' role='alert'><button type='button' class='close' data-dismiss='alert' id='btnClose'><span aria-hidden='true'>&times;</span><span class='sr-only'>Close</span></button><strong>登陆失败！</strong> 2用户名或密码错误，请重试！</div>");
                             }
-
                         }
                     },
                     error:function(XMLHttpRequest, textStatus, errorThrown){
@@ -160,7 +148,7 @@
                             $("#btnClose").trigger("click");
                         }
                         $("#btn-login").button('reset');
-                        $("#login-form").prepend("<div class='alert alert-danger' role='alert'><button id='btnClose' type='button' class='close' data-dismiss='alert'><span aria-hidden='true'>&times;</span><span class='sr-only'>Close</span></button><strong>登陆失败！</strong> error123456用户名或密码错误，请重试！</div>");
+                        $("#login-form").prepend("<div class='alert alert-danger' role='alert'><button id='btnClose' type='button' class='close' data-dismiss='alert'><span aria-hidden='true'>&times;</span><span class='sr-only'>Close</span></button><strong>登陆失败！</strong> error用户名或密码错误，请重试！</div>");
                     }
                 });
             });
