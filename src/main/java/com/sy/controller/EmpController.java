@@ -2,12 +2,14 @@ package com.sy.controller;
 
 import com.sy.pojo.Employee;
 import com.sy.service.IEmployeeService;
+import net.sf.json.JSONArray;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
@@ -23,6 +25,14 @@ public class EmpController {
     private IEmployeeService iEmpService;
     Employee emp = new Employee();
 
+
+    /**
+     * 用户登录
+     * @param username
+     * @param password
+     * @param session
+     * @return
+     */
     @RequestMapping("/login.do")
     @ResponseBody
     public HashMap<String,Object> UserLogin(@RequestParam("name") String username, @RequestParam("password") String password,HttpSession session) {
@@ -69,13 +79,20 @@ public class EmpController {
     return list;
     }
 
-
+    /**
+     * 查询用户列表
+     * @return
+     */
     @RequestMapping("/getEmpList.do")
     @ResponseBody
-    public List<Employee> getEmpList() {
+    public JSONArray getEmpList() {
         List<Employee> list = iEmpService.getEmpList();
+        JSONArray jsonArray = new JSONArray();
+        for (Object object : list) {
+            jsonArray.add(object);
+        }
         System.out.println("********"+list);
-        return list;
+        return jsonArray;
     }
 
     @RequestMapping("/insertEmp.do")
