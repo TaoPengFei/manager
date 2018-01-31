@@ -124,6 +124,7 @@ public class EmpController {
         int result = iEmpService.insertEmp(map);
         System.out.println("********"+result);
         return result;
+
     }
 
 
