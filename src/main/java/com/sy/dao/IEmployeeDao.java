@@ -23,6 +23,14 @@ public interface IEmployeeDao {
     List<Employee> getEmpInfo(Employee employee);
 
     /**
+     * 更改用户密码
+     * @param employee
+     * @return
+     */
+    int updatepwd(Employee employee);
+
+
+    /**
      * 获取查询的所有可用用户列表信息
      * @return
      */

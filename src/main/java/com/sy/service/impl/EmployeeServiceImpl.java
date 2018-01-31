@@ -23,6 +23,11 @@ public class EmployeeServiceImpl implements IEmployeeService{
     }
 
     @Override
+    public int updatepwd(Employee employee) {
+        return this.iEmployeeDao.updatepwd(employee);
+    }
+
+    @Override
     public List<Employee> getEmpInfo(Employee employee) {
         return this.iEmployeeDao.getEmpInfo(employee);
     }

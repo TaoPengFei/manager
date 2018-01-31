@@ -13,6 +13,8 @@ public interface IEmployeeService {
 
     public List<Employee> getEmpInfo(Employee employee);
 
+    public int updatepwd(Employee employee);
+
     public List<Employee> getEmpList();
 
     public int insertEmp(Employee employee);

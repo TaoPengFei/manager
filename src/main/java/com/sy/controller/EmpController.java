@@ -79,6 +79,17 @@ public class EmpController {
     return list;
     }
 
+    @RequestMapping("/updatepwd.do")
+    @ResponseBody
+    public HashMap<String,Object> updatepwd(){
+        emp.setEmpId(1);
+        emp.setEmpPassword("654321");
+        int result = iEmpService.updatepwd(emp);
+        HashMap<String,Object> map  = new HashMap<String,Object>();
+        map.put("code",result);
+        return map;
+    }
+
     /**
      * 查询用户列表
      * @return
@@ -98,6 +109,12 @@ public class EmpController {
         return jsonArray;
     }
 
+
+
+    /**
+     * 添加用户 参数待定
+     * @return
+     */
     @RequestMapping("/insertEmp.do")
     @ResponseBody
     public int insertEmp() {

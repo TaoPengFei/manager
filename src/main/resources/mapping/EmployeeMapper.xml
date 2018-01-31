@@ -34,7 +34,17 @@
     and EmpStatus2=1
   </select>
 
-  <insert id="insertEmp" parameterType="com.sy.pojo.Employee" >
+  <update id="updatepwd" parameterType="com.sy.pojo.Employee" >
+    update Tbb_Employee
+    <set >
+      <if test="EmpPassword != null" >
+        EmpPassword = #{EmpPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where EmpId = #{EmpId,jdbcType=INTEGER}
+  </update>
+
+  <insert id="insertEmp" parameterType="java.util.HashMap" >
     begin
     declare @EmpId int
     select @EmpId = isnull(max(EmpId),0) from Tbb_Employee
@@ -47,4 +57,20 @@
     end
   </insert>
 
+
+  <update id="updateByPrimaryKeySelective" parameterType="java.util.HashMap" >
+    update Tbb_Employee
+    <set >
+      <if test="userName != null" >
+        userName = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="DeptId != null" >
+        DeptId = #{DeptId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where EmpId = #{EmpId,jdbcType=INTEGER}
+  </update>
 </mapper>
