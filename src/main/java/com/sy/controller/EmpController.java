@@ -81,9 +81,8 @@ public class EmpController {
 
     @RequestMapping("/updatepwd.do")
     @ResponseBody
-    public HashMap<String,Object> updatepwd(){
-        emp.setEmpId(1);
-        emp.setEmpPassword("654321");
+    public HashMap<String,Object> updatepwd(@RequestParam("password") String password){
+        emp.setEmpPassword(password);
         int result = iEmpService.updatepwd(emp);
         HashMap<String,Object> map  = new HashMap<String,Object>();
         map.put("code",result);
