@@ -2,6 +2,7 @@ package com.sy.service;
 
 import com.sy.pojo.Employee;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -17,7 +18,7 @@ public interface IEmployeeService {
 
     public List<Employee> getEmpList();
 
-    public int insertEmp(Employee employee);
+    public int insertEmp(HashMap<String,Object> map);
 
 
 }

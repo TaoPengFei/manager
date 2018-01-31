@@ -6,6 +6,7 @@ import com.sy.service.IEmployeeService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -38,7 +39,7 @@ public class EmployeeServiceImpl implements IEmployeeService{
     }
 
     @Override
-    public int insertEmp(Employee employee) {
-        return this.iEmployeeDao.insertEmp(employee);
+    public int insertEmp(HashMap<String,Object> map) {
+        return this.iEmployeeDao.insertEmp(map);
     }
 }
