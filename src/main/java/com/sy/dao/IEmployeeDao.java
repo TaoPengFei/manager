@@ -2,6 +2,7 @@ package com.sy.dao;
 
 import com.sy.pojo.Employee;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -38,10 +39,10 @@ public interface IEmployeeDao {
 
     /**
      * 插入一条用户记录
-     * @param employee
+     * @param map
      * @return
      */
-    int insertEmp(Employee employee);
+    int insertEmp(HashMap<String,Object> map);
 
     /**
      * 修改用户信息

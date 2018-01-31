@@ -117,9 +117,11 @@ public class EmpController {
     @RequestMapping("/insertEmp.do")
     @ResponseBody
     public int insertEmp() {
-        Employee emp2 = new Employee();
-        emp2.setEmpName("sfajsd");
-        int result = iEmpService.insertEmp(emp2);
+
+        HashMap<String,Object> map = new HashMap<String,Object>();
+     //   map.put("EmpName",EmpName);
+
+        int result = iEmpService.insertEmp(map);
         System.out.println("********"+result);
         return result;
     }
